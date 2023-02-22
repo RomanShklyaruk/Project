@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Квіз</title>
+ <style>
+  .correct { color: green; }
+  .incorrect { color: red; }
+ </style>
+</head>
+<body>
+ <h1></h1>
+ <p>1. Столиця Франції:</p>
+ <ul>
+  <li>
+   <input type="radio" name="q1" value="a" id="q1a">
+   <label for="q1a">a) Париж</label>
+  </li>
+  <li>
+   <input type="radio" name="q1" value="b" id="q1b">
+   <label for="q1b">b) Мадрид</label>
+  </li>
+  <li>
+   <input type="radio" name="q1" value="c" id="q1c">
+   <label for="q1c">c) Лондон</label>
+  </li>
+ </ul>
+ <button type="button" onclick="checkAnswer()">Submit</button>
+
+ <script>
+  function checkAnswer() {
+   // Отримайте відповідь, яку вибрав користувач
+   var selectedAnswer = document.querySelector('input[name="q1"]:checked').value;
+
+   // Перевірте, чи правильна відповідь, і виведіть відповідне повідомлення
+   if (selectedAnswer === "a") {
+    document.getElementById("q1a").parentNode.classList.add("Правильно");
+    alert("Правильно!");
+   } else {
+    document.getElementById("q1" + selectedAnswer).parentNode.classList.add("Неправильно");
+    alert("Неправильно. Правильною відповіддю є a) Париж.");
+   }
+  }
+ </script>
+</body>
+</html>
